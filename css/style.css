@@ -416,7 +416,6 @@ header .intro-text {
 /* Team Section */
 #team {
 	padding: 100px 0;
-	background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
 }
 #team h4 {
 	margin: 5px 0;
