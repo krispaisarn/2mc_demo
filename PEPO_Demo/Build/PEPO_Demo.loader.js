@@ -218,6 +218,7 @@ function createUnityInstance(canvas, config, onProgress) {
     if (browser == 'Safari') browserVersion = extractRe('Version\/(.*?) ', ua, 1);
     if (browser == 'Internet Explorer') browserVersion = extractRe('rv:(.*?)\\)? ', ua, 1) || browserVersion;
 
+    // These OS strings need to match the ones in Runtime/Misc/SystemInfo.cpp::GetOperatingSystemFamily()
     var oses = [
       ['Windows (.*?)[;\)]', 'Windows'],
       ['Android ([0-9_\.]+)', 'Android'],
@@ -226,7 +227,7 @@ function createUnityInstance(canvas, config, onProgress) {
       ['FreeBSD( )', 'FreeBSD'],
       ['OpenBSD( )', 'OpenBSD'],
       ['Linux|X11()', 'Linux'],
-      ['Mac OS X ([0-9_\.]+)', 'macOS'],
+      ['Mac OS X ([0-9_\.]+)', 'MacOS'],
       ['bot|google|baidu|bing|msn|teoma|slurp|yandex', 'Search Bot']
     ];
     for(var o = 0; o < oses.length; ++o) {
